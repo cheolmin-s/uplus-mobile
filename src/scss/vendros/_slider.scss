@@ -94,21 +94,23 @@
     }
     
     & ul{
-        width:1000px;
+        float:left;
+        display:block;
+        font-size:0;
+        white-space:nowrap;
+        position:relative;
         padding-left:20px;
-
-        &:after{
-            display:block;
-            content:"";
-            clear:both;
-        }
     }
 
     & li{
-        float:left;
+        display:inline-block;
         width:119px;
         height:79px;
         padding-right:10px;
+
+        &:last-child{
+            padding-right:40px;
+        }
     }
     
     & a{
@@ -181,59 +183,64 @@
 /* heading 슬라이드 */
 
 .plan-slide-wrap{
-    .ts-controls{
+    position: relative;
+}
+.ts-controls{
+    position:absolute;
+    top:0;
+    left:0;
+    width:100%;
 
-        .ts-paging{
-            position:absolute;
-            height:10px;
-            top:43px;
-            left:50%;
-            transform:translateX(-50%);
-            
-            & > button{
-                padding:0;
-                border:0;
-                width:10px;
-                height:0;
-                max-height:10px;
-                padding-top:10px;
-                margin-right:8px;
-                overflow:hidden;
-                background:url('../images/icons/btn-slide-paging.png')no-repeat;
-                background-size:cover;
-    
-                &:last-child{
-                    margin-right:0;
-                }
-            }
-            .ts-paging-active{
-                background:url('../images/icons/btn-slide-paging.png')0 -20px no-repeat;
-                background-size:cover;
-            }
-        }
-    
+    .ts-paging{
+        position:absolute;
+        top:43px;
+        height:10px;
+        left:50%;
+        transform:translateX(-50%);
+        
         & > button{
             padding:0;
             border:0;
-            width:28px;
+            width:10px;
             height:0;
-            max-height:72px;
-            padding-top:72px;
+            max-height:10px;
+            padding-top:10px;
+            margin-right:8px;
             overflow:hidden;
-            position:absolute;
-            top:0;
+            background:url('../images/icons/btn-slide-paging.png')no-repeat;
+            background-size:cover;
+
+            &:last-child{
+                margin-right:0;
+            }
         }
-    
-        .ts-prev{
-            left:0;
-            background:url('../images/icons/heading-slide-prev.png')20px 50% no-repeat;
-            background-size:8px;
+        .ts-paging-active{
+            background:url('../images/icons/btn-slide-paging.png')0 -20px no-repeat;
+            background-size:cover;
         }
-        .ts-next{
-            right:0;
-            background:url('../images/icons/heading-slide-next.png')0 50% no-repeat;
-            background-size:8px;
-        }
+    }
+
+    & > button{
+        position:absolute;
+        top:0;    
+        padding:0;
+        border:0;
+        width:28px;
+        height:0;
+        max-height:72px;
+        padding-top:72px;
+        overflow:hidden;
+    }
+
+    .ts-prev{
+        left:0;
+        background:url('../images/icons/heading-slide-prev.png')20px 50% no-repeat;
+        background-size:8px;
+    }
+    .ts-next{
+        right:0;
+        background:url('../images/icons/heading-slide-next.png')0 50% no-repeat;
+        background-size:8px;
     }
 }
 
@@ -266,20 +273,45 @@
             width:100%;
         }
     }
+
+    .count{
+        width:40px;
+        height:24px;
+        background:rgba(0,0,0,0.7);
+        position:absolute;
+        top:8px;
+        right:8px;
+    }
+    .box{
+        font-size:12px;
+        color:#ccc;
+        margin:0;
+        padding:0;
+        height:24px;
+        line-height:24px;
+    }
+
+    .current{
+        color:#fff;
+        margin-left:9px;
+        margin-right:4px;
+        font-weight:500;
+    }
+
 }
 
 .review-slide-wrap{
     position:relative;
 
     .ts-controls{
-        position:absolute;
-        left:35px;
-        bottom:20px;
-        width:100%;
 
         .ts-paging{
+            position:absolute;
             width:calc(100% - 70px);
+            left:35px;
             height:2px;
+            top:308px;
+            transform:none;
             
             & > button{
                 padding:0;
@@ -290,6 +322,7 @@
                 padding-top:2px;
                 overflow:hidden;
                 background:rgba(255,255,255,0.5);
+                margin-right:0;
          
                 &:last-child{
                     margin-right:0;
@@ -392,7 +425,7 @@
     border-bottom:1px solid #000;
 
     .ts-paging{
-        bottom:20px;
+        top:191px;
 
         & button{
             background:url('../images/icons/phone-detail-slide-paging.png')no-repeat;
@@ -423,13 +456,13 @@
     }
 }
 
-/* phone-detail 이벤트 살라이드 */
+/* phone-detail 이벤트 슬라이드 */
 .event-slide-wrap{
     position:relative;
     margin-top:30px;
 
     .ts-paging{
-        bottom:20px;
+        top:232px;
 
         & button{
             background:url('../images/icons/phone-detail-slide-paging.png')no-repeat;

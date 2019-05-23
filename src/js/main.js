@@ -8,6 +8,7 @@ $(function(){
     var $depth2Link = $('.depth2 > li > a')
     var $closeBtn = $('.close-btn')
     var $body = $('body');
+    var $window = $(window);
 
     $menuBtn.on('click',function(){
         $body.css('overflow','hidden');
@@ -50,33 +51,18 @@ $(function(){
 $(function(){
 
     $(".banner-slide").touchSlider({
-        page:1,
-        useMouse:true,
-        view:1,
         controls:false,
-        counter: true,
         paging:false,
         speed:1000,
         autoplay:{
             enable:true,
             pauseHover:false,
             addHoverTarget:'',
-            interval:7000,
+            interval:5000,
         },
-        initComplete: function(e) {
-            var _this = this;
-            var paging = '';
-            var len = Math.ceil(this._len / this._view);
-            for(var i = 1; i <= len; i++) {
-                paging += '<button type="button" class="page">page' + i + '</button>';
-            }
-            $(this).next().find('.paging').html(paging).find('.page').on('click', function(e) {
-                _this.go_page($(this).index());
-            });
-        },
+      
         counter: function(e) {
-            $(this).next().find('.page').removeClass('on').eq(e.current-1).addClass('on');
-            $(this).next().find('.count').html('current : ' + e.current + ', total : ' + e.total);
+            $(this).children('.count').children('.box').children('.current').html(e.current);
         }
     });
 });
@@ -168,61 +154,54 @@ $(function(){
 $(function(){
 
     var $window = $(window);
+    var $tabLink1 = $('.tab-link1')
+    var $tabLink2 = $('.tab-link2')
 
     $window.scroll(function(){
 
-        var $tabMenu = $('.tab-menu');
+        var a = $window.scrollTop() + $window.height() - 500;
 
-        var a = $window.scrollTop() + $window.height();
+        var $tabMenu = $('.tab-menu');
 
         $tabMenu.each(function(){
 
             var $this = $(this);
 
-            var b = $(this).offset().top;
+            var b = $this.offset().top;
 
-            if(a >= b){
-                $this.children('ul').children('li').eq(0).addClass('on');
+            var c = $this.next('.tab-contents').offset().top;
+
+            var index = $this.index($tabMenu);
+
+            if( a >= b && c ){
+                $this.children('ul').children('li').eq(index).addClass('on');
+                $this.next('.tab-contents').addClass('on');
             }else{
-                $this.children('ul').children('li').removeClass('on');
+                $this.children('ul').children('li').eq(index).removeClass('on');
+                $this.next('.tab-contents').removeClass('on');
             }
         });
     })
 
-});
+    $tabLink1.on('click',function(e){
 
-$(function(){
+        e.preventDefault();
 
-    $(".phone .banner-slide").touchSlider({
-        page:1,
-        useMouse:true,
-        view:1,
-        controls:false,
-        counter: true,
-        paging:false,
-        speed:1000,
-        autoplay:{
-            enable:true,
-            pauseHover:false,
-            addHoverTarget:'',
-            interval:7000,
-        },
-        initComplete: function(e) {
-            var _this = this;
-            var paging = '';
-            var len = Math.ceil(this._len / this._view);
-            for(var i = 1; i <= len; i++) {
-                paging += '<button type="button" class="page">page' + i + '</button>';
-            }
-            $(this).next().find('.paging').html(paging).find('.page').on('click', function(e) {
-                _this.go_page($(this).index());
-            });
-        },
-        counter: function(e) {
-            $(this).next().find('.page').removeClass('on').eq(e.current-1).addClass('on');
-            $(this).next().find('.count').html('current : ' + e.current + ', total : ' + e.total);
-        }
+        var position = $('#usim-container').offset();
+
+        $('html,body').stop().animate({scrollTop:position.top - 85},500);
     });
+
+    $tabLink2.on('click',function(e){
+
+        e.preventDefault();
+ 
+        var position = $('#phone-container').offset();
+
+        $('html,body').stop().animate({scrollTop:position.top - 85},500);
+        
+    });
+
 });
 
 $(function(){
@@ -241,4 +220,33 @@ $(function(){
         btn_next: $('.slide-next'),
     });
 });
+
+$(function(){
+
+    var $topBtn = $('.top-link');
+    
+    $topBtn.on('click',function(e){
+
+        e.preventDefault();
+
+        var position = $('html,body').offset(); 
+
+        $('html,body').stop().animate({scrollTop : position.top},500);
+    });
+
+    $(window).scroll(function(){
+
+        var position = $(window).scrollTop();
+        var $header = $('.common-header');
+
+        if( position ){
+            $('.top-link').addClass('on');
+            $header.addClass('on');
+        } else {
+            $('.top-link').removeClass('on');
+            $header.removeClass('on');
+        }
+    });
+});
+
 

@@ -88,6 +88,12 @@
     padding:0 20px;
     border-top:10px solid #f6f6f6;
     box-sizing:border-box;
+    opacity:.2;
+    transition:all .5s ease-out;
+
+    &.on{
+        opacity:1;
+    }
 
     .title{
         color:#121212;
