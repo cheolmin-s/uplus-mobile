@@ -885,7 +885,7 @@ a { text-decoration: none; color: #333; }
 
 .section-phone-detail .more-link-wrap ul:after { display: block; content: ""; clear: both; }
 
-.section-phone-detail .more-link-wrap li { float: left; width: calc(50% - 0.78%); margin: 0 5px 5px 0; }
+.section-phone-detail .more-link-wrap li { float: left; width: calc(50% - 0.90%); margin: 0 5px 5px 0; }
 
 .section-phone-detail .more-link-wrap li:nth-child(even) { margin-right: 0; }
 
