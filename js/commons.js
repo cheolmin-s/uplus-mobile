@@ -53,7 +53,6 @@ $(function(){
     $(".banner-slide").touchSlider({
         controls:false,
         paging:false,
-        speed:1000,
         autoplay:{
             enable:true,
             pauseHover:false,
