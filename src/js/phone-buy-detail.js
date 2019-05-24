@@ -48,32 +48,41 @@ $(function(){
 
 $(function(){
 
-    var $more = $('.more');
+    var $more = $('.payment-menu .more');    
+    var $wrap = $('.payment-menu .wrap');
+    var $he = $(window).height() / 2.2  
 
-    $more.on('click',function(e){
+    $wrap.css({ height : $he });
+
+    $more.on('click',function(e){   
 
         e.preventDefault();
 
-        var $info = $('.info');
-        var $wrap = $('.wrap');
-        var $body = $('html,body');
+        var $info = $('.payment-menu .info');
+        var $bottom = parseInt($info.css("bottom"));
         var $dim = $('.dim');
-        var $payMent = $('.payment-menu');
+        var $payment = $('.payment-menu');
+        var $body = $('html,body');
 
-        if($wrap.hasClass('on')){                 
-            $wrap.removeClass('on');
-            $info.css({bottom:0})
-            $body.css('overflow','visible');
-            $dim.removeClass('on');
-            $payMent.css('z-index','10');
-        } else {
-            $wrap.addClass('on');
-            $info.css({bottom:420});
-            $body.css('overflow','hidden');
+        if( $bottom < 1 ){
+            $info.css({ bottom : $he });
             $dim.addClass('on');
-            $payMent.css('z-index','200');
+            $payment.css('z-index','202');
+            $body.css('overflow','hidden');
+        } else {
+            $info.css({ bottom : 0 });
+            $dim.removeClass('on');
+            $payment.css('z-index','10');
+            $body.css('overflow','visible');
         }
+
+        
+
     });
+
+
+
+
 });
 
 $(function(){
@@ -90,4 +99,5 @@ $(function(){
     });
 
 });
+
 

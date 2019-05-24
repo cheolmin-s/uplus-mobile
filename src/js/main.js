@@ -7,7 +7,7 @@ $(function(){
     var $depth1Link = $('.depth1 > li > a')
     var $depth2Link = $('.depth2 > li > a')
     var $closeBtn = $('.close-btn')
-    var $body = $('body');
+    var $body = $('html,body');
     var $window = $(window);
 
     $menuBtn.on('click',function(){
@@ -159,7 +159,7 @@ $(function(){
 
     $window.scroll(function(){
 
-        var a = $window.scrollTop() + $window.height() - 500;
+        var a = $window.scrollTop();
 
         var $tabMenu = $('.tab-menu');
 
@@ -167,13 +167,11 @@ $(function(){
 
             var $this = $(this);
 
-            var b = $this.offset().top;
-
-            var c = $this.next('.tab-contents').offset().top;
+            var b = $this.offset().top - 60;
 
             var index = $this.index($tabMenu);
 
-            if( a >= b && c ){
+            if( a === b ){
                 $this.children('ul').children('li').eq(index).addClass('on');
                 $this.next('.tab-contents').addClass('on');
             }else{
@@ -187,18 +185,18 @@ $(function(){
 
         e.preventDefault();
 
-        var position = $('#usim-container').offset();
+        var position = $('#usim-container').offset().top - 59;
 
-        $('html,body').stop().animate({scrollTop:position.top - 85},500);
+        $('html,body').stop().animate({scrollTop:position},500);
     });
 
     $tabLink2.on('click',function(e){
 
         e.preventDefault();
  
-        var position = $('#phone-container').offset();
+        var position = $('#phone-container').offset().top - 59;
 
-        $('html,body').stop().animate({scrollTop:position.top - 85},500);
+        $('html,body').stop().animate({scrollTop:position},500);
         
     });
 
@@ -241,10 +239,8 @@ $(function(){
 
         if( position ){
             $('.top-link').addClass('on');
-            $header.addClass('on');
         } else {
             $('.top-link').removeClass('on');
-            $header.removeClass('on');
         }
     });
 });

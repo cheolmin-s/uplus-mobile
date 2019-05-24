@@ -33,10 +33,19 @@
     padding-top:30px;
 }
 
-.tab-menu{
+
+#usim-container,#phone-container{
     margin-top:25px;
+}
+
+.tab-menu{
     border-bottom:1px solid #e1e1e1;
     box-sizing:border-box;
+    position:sticky;
+    top:60px;
+    left:0;
+    z-index:40;
+    background:#fff;
 
     & ul{
 
@@ -384,7 +393,6 @@
     }
 
     .list-item{
-        height:124px;
         margin-top:12px;
         position: relative;
 
@@ -394,7 +402,6 @@
 
         & a{
             display:block;
-            height:124px;
             
             & > img{
                 width:100%;
@@ -779,7 +786,7 @@
         margin-top:17px;
     }
     .info-link{
-        display:inline-block;
+        display:block;
         font-size:16px;
         line-height:1.3;
     }
