@@ -22,6 +22,8 @@ table { border-collapse: collapse; border-spacing: 0; border: 1px solid #333; }
 
 a { text-decoration: none; color: #333; }
 
+.scroll-off { position: fixed; overflow: hidden; height: 100%; }
+
 .hidden-text { overflow: hidden; position: absolute; border: 0; width: 1px; height: 1px; clip: rect(1px, 1px, 1px, 1px); }
 
 /* 공통 헤더 */
@@ -637,7 +639,7 @@ a { text-decoration: none; color: #333; }
 
 .notice .btn-more { display: inline-block; width: 20px; height: 0; max-height: 20px; padding-top: 20px; overflow: hidden; background: url("../images/icons/btn-more.png") no-repeat; background-size: cover; margin-top: 16px; }
 
-.section-phone-detail input { -webkit-border-radius: 0; }
+.section-phone-detail input { -webkit-appearance: none; -moz-appearance: none; appearance: none; border-radius: 0px; border: 0; }
 
 .section-phone-detail .contents-main { padding: 0 20px; }
 
@@ -705,7 +707,7 @@ a { text-decoration: none; color: #333; }
 
 .section-phone-detail .condition-select .select-info dt a { margin-top: 5px; display: block; width: 20px; height: 0; max-height: 20px; padding-top: 20px; overflow: hidden; background: url("../images/icons/icon-type-info.png") no-repeat; background-size: 15px; }
 
-.section-phone-detail .condition-select .select-info input { position: absolute; top: 0; left: 0; overflow: hidden; width: 100%; height: 0; margin: 0; -webkit-appearance: none; -moz-appearance: none; appearance: none; }
+.section-phone-detail .condition-select .select-info input { position: absolute; top: 0; left: 0; overflow: hidden; width: 100%; height: 0; margin: 0; }
 
 .section-phone-detail .condition-select .color dd { position: relative; width: 33.33%; height: 90px; border: 1px solid #e8e8e8; border-left: 0; float: left; -webkit-box-sizing: border-box; box-sizing: border-box; margin-bottom: 7px; }
 
@@ -729,7 +731,7 @@ a { text-decoration: none; color: #333; }
 
 .section-phone-detail .condition-select .color label:before { display: block; content: ""; position: absolute; top: 15px; left: 50%; -webkit-transform: translateX(-50%); transform: translateX(-50%); width: 20px; height: 20px; border-radius: 50%; }
 
-.section-phone-detail .condition-select .color input[type="radio"].radio-color:checked:after { display: block; content: ""; position: absolute; top: 0; left: 0; width: 100%; height: calc(100% - 2px); border: 2px solid #000; -webkit-box-sizing: border-box; box-sizing: border-box; }
+.section-phone-detail .condition-select .color input[type="radio"].radio-color:checked:after { display: block; content: ""; position: absolute; top: 0; left: 0; width: 100%; height: calc(100% - 2px); border: 2px solid #000; -webkit-box-sizing: border-box; box-sizing: border-box; background: 0; }
 
 .section-phone-detail .condition-select .join-type dd { position: relative; width: 32.33%; height: 25px; float: left; margin-right: 3.5px; }
 
