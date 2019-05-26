@@ -161,7 +161,7 @@ $(function(){
     var $tabLink1 = $('.tab-link1')
     var $tabLink2 = $('.tab-link2')
 
-    $window.on('scroll touchmove',function(){
+    $window.on('scroll',function(){
 
         var a = $window.scrollTop();
 
