@@ -80,7 +80,6 @@ $(function(){
 $(function(){
 
     $(".usim .plan-slide").touchSlider({
-        transition: false,
         resize: false,
         counter: function(){
             
@@ -115,7 +114,6 @@ $(function(){
     });
 
     $(".phone .plan-slide").touchSlider({
-        transition: false,
         resize: false,
         counter: function(){
             
