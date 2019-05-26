@@ -310,8 +310,8 @@
             }
 
             & input{
-                max-height:90px;
-                padding-top:90px;
+                max-height:86px;
+                padding-top:86px;
             }
 
             & label{
@@ -335,6 +335,7 @@
                     height:20px;
                     border-radius:50%;
                 }
+            
             }
 
 
@@ -345,10 +346,25 @@
                 top:0;
                 left:0;
                 width:100%;
-                height:calc(100% - 2px);
+                height:100%;
+                background:rgba(0,0,0,0);
                 border:2px solid #000;
                 box-sizing:border-box;
-                background:none;
+            }
+
+            & input[type="radio"].radio-color:checked + label:after{
+                display:block;
+                content:"";
+                position:absolute;
+                width:12px;
+                height:12px;
+                border-radius:50%;
+                top:13px;
+                left:calc(50% + 6px);
+                -webkit-transform:translateX(-50%);
+                transform:translateX(-50%);
+                background:#ff626f url(../images/icons/btn-colorchip-active.png) 50% no-repeat;
+                background-size: 8px 5px;
             }
         }
 
