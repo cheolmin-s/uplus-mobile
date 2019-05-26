@@ -169,7 +169,7 @@ $(function(){
 
             var index = $this.index($tabMenu);
 
-            if( a === b ){
+            if( a >= b ){
                 $this.children('ul').children('li').eq(index).addClass('on');
                 $this.next('.tab-contents').addClass('on');
             }else{
