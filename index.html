@@ -20,6 +20,15 @@ table{
     border-top:1px solid #000;
     border-bottom:1px solid #000;
     border-collapse:collapse;
+    font-size:15px;
+}
+
+table a{
+    text-decoration:none;
+}
+
+table a:hover{
+    text-decoration:underline;
 }
 
 table caption{
@@ -55,19 +64,24 @@ table td{
 table td:last-child{
     border-right:0;
 }
+
+.center{
+    text-align:center;
+}
 </style>
 
 <body>
 
 <table>
-    <caption>퍼블리싱 포트폴리오</caption>
+    <caption>U+ 알뜰모바일 다이렉트몰 - 퍼블리싱 포트폴리오</caption>
     <colgroup>
-        <col style="width:13%">
-        <col style="width:13%">
-        <col style="width:13%">
+        <col style="width:12%">
+        <col style="width:12%">
+        <col style="width:12%">
         <col style="width:22%">
-        <col style="width:16%">
-        <col style="width:23%">
+        <col style="width:12%">
+        <col style="width:8%">
+        <col style="width:22%">
     </colgroup>
 
     <thead>
@@ -77,6 +91,7 @@ table td:last-child{
             <th>Depth3</th>
             <th>페이지</th>
             <th>파일</th>
+            <th>미리보기</th>
             <th>비고</th>
         </tr>
     </thead>
@@ -87,8 +102,9 @@ table td:last-child{
             <td></td>
             <td></td>
             <td>U+ 알뜰모바일 다이렉트몰 메인</td>
-            <td><a href="http://troy.labs.daum.net/?url=https%3A%2F%2Fcheolmin-s.github.io%2Fuplus-mobile%2Fhtml%2Fmain.html&device=N950;A1549" target="_blank" title="새 창 열림">main.html</a></td>
-            <td></td>
+            <td><a href="html/main.html" target="_blank" title="새 창 열림">main.html</a></td>
+            <td class="center"><a href="http://troy.labs.daum.net/?url=https%3A%2F%2Fcheolmin-s.github.io%2Fuplus-mobile%2Fhtml%2Fmain.html&device=N950;A1549">[미리보기]</a></td>
+            <td></td> 
         </tr>
 
         <tr>
@@ -96,7 +112,8 @@ table td:last-child{
             <td>알뜰중고폰 구매하기</td>
             <td></td>
             <td>알뜰중고폰 > 알뜰중고폰 구매하기 > 상세페이지</td>
-            <td><a href="http://troy.labs.daum.net/?url=https%3A%2F%2Fcheolmin-s.github.io%2Fuplus-mobile%2Fhtml%2Fphone-buy-detail.html&device=N950;A1549" target="_blank" title="새 창 열림">phone-buy-detail.html</a></td>
+            <td><a href="html/phone-buy-detail" target="_blank" title="새 창 열림">phone-buy-detail.html</a></td>
+            <td class="center"><a href="http://troy.labs.daum.net/?url=https%3A%2F%2Fcheolmin-s.github.io%2Fuplus-mobile%2Fhtml%2Fphone-buy-detail.html&device=N950;A1549">[미리보기]</a></td>
             <td></td>
         </tr>
 
