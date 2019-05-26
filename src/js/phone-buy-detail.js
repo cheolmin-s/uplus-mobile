@@ -12,12 +12,14 @@ $(function(){
 
         if($(this).hasClass('on')){
             $(this).removeClass('on');
-            $body.css('overflow','visible');
+            $body.addClass('scroll-off').on('scroll touchmove',function(e){
+                e.preventDefault();
+            });
             $dim.removeClass('on');
             $subDepth2.removeClass('on');
         } else {
             $(this).addClass('on');
-            $body.css('overflow','hidden');
+            $body.removeClass('scroll-off').off('scroll touchmove');
             $dim.addClass('on');
             $subDepth2.addClass('on');
         }
@@ -69,13 +71,15 @@ $(function(){
             $info.css({ bottom : $he });
             $dim.addClass('on');
             $payment.css('z-index','202');
-            $body.css('overflow','hidden');
+            $body.addClass('scroll-off').on('scroll touchmove',function(e){
+                e.preventDefault();
+            });
             $this.addClass('on');
         } else {
             $info.css({ bottom : 0 });
             $dim.removeClass('on');
             $payment.css('z-index','10');
-            $body.css('overflow','visible');
+            $body.removeClass('scroll-off').off('scroll touchmove');
             $this.removeClass('on');
         }
     });

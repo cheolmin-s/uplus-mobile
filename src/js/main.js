@@ -10,7 +10,9 @@ $(function(){
     var $window = $(window);
 
     $menuBtn.on('click',function(){
-        $body.css('overflow','hidden');
+        $body.addClass('scroll-off').on('scroll touchmove',function(e){
+            e.preventDefault();
+        });
         $gnbWrap.addClass('on');
         $bg.addClass('on');
     });
@@ -41,7 +43,7 @@ $(function(){
     $('.close-btn, .dim').on('click',function(){
         $gnbWrap.removeClass('on');
         $bg.removeClass('on');
-        $body.css('overflow','visible');
+        $body.removeClass('scroll-off').off('scroll touchmove');
     });
 });
 
@@ -159,7 +161,7 @@ $(function(){
     var $tabLink1 = $('.tab-link1')
     var $tabLink2 = $('.tab-link2')
 
-    $window.scroll(function(){
+    $window.on('scroll touchmove',function(){
 
         var a = $window.scrollTop();
 
