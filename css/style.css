@@ -171,13 +171,17 @@ a { text-decoration: none; color: #333; }
 
 .common-footer .customer-service dd { position: relative; }
 
+.common-footer .customer-service dd:after { display: block; content: ""; clear: both; }
+
+.common-footer .customer-service ul { float: left; }
+
 .common-footer .customer-service li { color: #ccc; font-size: 12px; }
 
 .common-footer .customer-service .tel { font-size: 18px; color: #ff626f; position: absolute; bottom: 0; right: 23px; }
 
 .common-footer .customer-service .tel span { font-size: 12px; }
 
-.common-footer .nav-wrap { margin-top: 18px; text-align: center; }
+.common-footer .nav-wrap { margin-top: 19px; text-align: center; }
 
 .common-footer .nav-wrap li { display: inline-block; padding-right: 10px; margin-right: 1px; position: relative; }
 
@@ -433,11 +437,15 @@ a { text-decoration: none; color: #333; }
 
 .tab-contents .plan-slide-wrap { position: relative; }
 
-.tab-contents .plan-btn-more { padding-top: 20px; background: #fff; }
+.tab-contents .plan-btn-more { margin-top: 20px; background: #fff; }
 
 .tab-contents .plan-btn-more.hide { display: none; }
 
-.tab-contents .plan-btn-more a { display: block; height: 29px; border: 1px solid #ccc; -webkit-box-sizing: border-box; box-sizing: border-box; text-align: center; line-height: 29px; font-size: 12px; color: #121212; font-weight: bold; background: url("../images/icons/btn-more-arrow.png") 174px 12px no-repeat; background-size: 8px; text-indent: -12px; }
+.tab-contents .plan-btn-more a { display: block; height: 29px; border: 1px solid #ccc; -webkit-box-sizing: border-box; box-sizing: border-box; text-align: center; line-height: 29px; font-size: 12px; color: #121212; font-weight: bold; }
+
+.tab-contents .plan-btn-more a span { padding-right: 13px; position: relative; }
+
+.tab-contents .plan-btn-more a span:after { display: block; content: ""; position: absolute; top: 6px; right: 0; width: 8px; height: 5px; background: url("../images/icons/btn-more-arrow.png") no-repeat; background-size: 8px; }
 
 .usim { padding-top: 30px; }
 
@@ -639,6 +647,14 @@ a { text-decoration: none; color: #333; }
 
 .notice .btn-more { display: inline-block; width: 20px; height: 0; max-height: 20px; padding-top: 20px; overflow: hidden; background: url("../images/icons/btn-more.png") no-repeat; background-size: cover; margin-top: 16px; }
 
+@media screen and (max-width: 359px) { .common-header .util li:first-child { margin-right: 10px; }
+  .slide-heading { font-size: 13px; }
+  .usim .info .name { font-size: 12px; }
+  .customer-board li { margin: 0 6px 9px 0; }
+  .quick-menu li { margin-right: 10px; }
+  .quick-menu li > a { font-size: 15px; }
+  .common-footer .customer-service .tel { right: 0; } }
+
 .section-phone-detail input { -webkit-appearance: none; -moz-appearance: none; appearance: none; border-radius: 0px; border: 0; }
 
 .section-phone-detail .contents-main { padding: 0 20px; }
@@ -731,7 +747,7 @@ a { text-decoration: none; color: #333; }
 
 .section-phone-detail .condition-select .color label:before { display: block; content: ""; position: absolute; top: 15px; left: 50%; -webkit-transform: translateX(-50%); transform: translateX(-50%); width: 20px; height: 20px; border-radius: 50%; }
 
-.section-phone-detail .condition-select .color input[type="radio"].radio-color:checked:after { display: block; content: ""; position: absolute; top: 0; left: 0; width: 100%; height: calc(100% - 2px); border: 2px solid #000; -webkit-box-sizing: border-box; box-sizing: border-box; background: 0; }
+.section-phone-detail .condition-select .color input[type="radio"].radio-color:checked:after { display: block; content: ""; position: absolute; top: 0; left: 0; width: 100%; height: calc(100% - 2px); border: 2px solid #000; -webkit-box-sizing: border-box; box-sizing: border-box; background: none; }
 
 .section-phone-detail .condition-select .join-type dd { position: relative; width: 32.33%; height: 25px; float: left; margin-right: 3.5px; }
 
@@ -791,7 +807,7 @@ a { text-decoration: none; color: #333; }
 
 .section-phone-detail .condition-select .sale-type label { display: inline-block; width: 140px; height: 40px; border: 1px solid #666; -webkit-box-sizing: border-box; box-sizing: border-box; font-size: 11px; color: #666; text-align: center; padding-top: 6px; text-indent: -0.5px; line-height: 1; z-index: 5; position: relative; }
 
-.section-phone-detail .condition-select .sale-type label span { display: inline-block; font-size: 10px; margin-top: 5px; }
+.section-phone-detail .condition-select .sale-type label span { display: block; font-size: 10px; margin-top: 5px; }
 
 .section-phone-detail .condition-select .sale-type input[type="radio"].radio-sale-type:checked:after { display: block; content: ""; position: absolute; top: 0; left: 0; width: 100%; height: 100%; background: #000; }
 
@@ -962,5 +978,7 @@ a { text-decoration: none; color: #333; }
 .section-phone-detail .payment-menu .wrap .line-2 { display: inline-block; line-height: 1.3; }
 
 .section-phone-detail .payment-menu .wrap .point { color: #ff626f; }
+
+@media screen and (max-width: 359px) { .section-phone-detail .condition-select .join-type dd { width: 32%; } }
 
 /*# sourceMappingURL=../maps/style.css.map */
