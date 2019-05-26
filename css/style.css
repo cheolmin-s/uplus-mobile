@@ -284,7 +284,7 @@ a { text-decoration: none; color: #333; }
 /* heading 슬라이드 */
 .plan-slide-wrap { position: relative; }
 
-.ts-controls { position: absolute; top: 0; left: 0; width: 100%; }
+.ts-controls { position: absolute; top: 0; left: 0; width: 100%; z-index: 10; }
 
 .ts-controls .ts-paging { position: absolute; top: 43px; height: 10px; left: 50%; -webkit-transform: translateX(-50%); transform: translateX(-50%); }
 
@@ -374,7 +374,9 @@ a { text-decoration: none; color: #333; }
 /* phone-detail 이벤트 슬라이드 */
 .event-slide-wrap { position: relative; margin-top: 30px; }
 
-.event-slide-wrap .ts-paging { top: 232px; }
+.event-slide-wrap .ts-controls { top: auto; bottom: 0; }
+
+.event-slide-wrap .ts-paging { top: auto; bottom: 18px; }
 
 .event-slide-wrap .ts-paging button { background: url("../images/icons/phone-detail-slide-paging.png") no-repeat; background-size: cover; }
 
@@ -424,6 +426,8 @@ a { text-decoration: none; color: #333; }
 .tab-contents .contents-wrap ul:after { display: block; content: ""; clear: both; }
 
 .tab-contents .plan-slide { margin-top: 20px; position: relative; overflow: hidden; }
+
+.tab-contents .plan-slide li { -webkit-transition: all .3s ease-out; transition: all .3s ease-out; }
 
 .tab-contents .plan-slide-wrap { position: relative; }
 
@@ -633,6 +637,8 @@ a { text-decoration: none; color: #333; }
 
 .notice .btn-more { display: inline-block; width: 20px; height: 0; max-height: 20px; padding-top: 20px; overflow: hidden; background: url("../images/icons/btn-more.png") no-repeat; background-size: cover; margin-top: 16px; }
 
+.section-phone-detail input { -webkit-border-radius: 0; }
+
 .section-phone-detail .contents-main { padding: 0 20px; }
 
 .section-phone-detail .quick-menu { border-bottom: 1px solid #ccc; position: relative; z-index: 50; }
@@ -775,7 +781,7 @@ a { text-decoration: none; color: #333; }
 
 .section-phone-detail .condition-select .installment-month input[type="radio"].radio-month-type:checked + label { color: #fff; }
 
-.section-phone-detail .condition-select .sale-type dd { margin-bottom: 8px; display: inline-block; position: relative; }
+.section-phone-detail .condition-select .sale-type dd { margin: 0 8px 8px 0; display: inline-block; position: relative; }
 
 .section-phone-detail .condition-select .sale-type dd:last-child { margin-bottom: 7px; }
 
@@ -792,6 +798,8 @@ a { text-decoration: none; color: #333; }
 .section-phone-detail .condition-select .affiliate-cards dd { float: left; margin-bottom: 8px; position: relative; }
 
 .section-phone-detail .condition-select .affiliate-cards dd:first-of-type { margin-right: 3px; }
+
+.section-phone-detail .condition-select .affiliate-cards dd:nth-of-type(3) { margin-right: 3px; }
 
 .section-phone-detail .condition-select .affiliate-cards label { display: inline-block; padding: 0 10px; height: 25px; line-height: 23px; font-size: 12px; color: #666; border: 1px solid #666; -webkit-box-sizing: border-box; box-sizing: border-box; text-align: center; position: relative; z-index: 5; }
 
@@ -885,9 +893,11 @@ a { text-decoration: none; color: #333; }
 
 .section-phone-detail .more-link-wrap ul:after { display: block; content: ""; clear: both; }
 
-.section-phone-detail .more-link-wrap li { float: left; width: calc(50% - 0.90%); margin: 0 5px 5px 0; }
+.section-phone-detail .more-link-wrap li { float: left; width: 50%; -webkit-box-sizing: border-box; box-sizing: border-box; margin-bottom: 5px; }
 
-.section-phone-detail .more-link-wrap li:nth-child(even) { margin-right: 0; }
+.section-phone-detail .more-link-wrap li:nth-child(odd) { padding-right: 2.5px; }
+
+.section-phone-detail .more-link-wrap li:nth-child(even) { padding-left: 2.5px; }
 
 .section-phone-detail .more-link-wrap a { display: block; height: 40px; font-size: 15px; color: #000; border: 1px solid #000; -webkit-box-sizing: border-box; box-sizing: border-box; line-height: 38px; text-align: center; }
 
@@ -916,6 +926,8 @@ a { text-decoration: none; color: #333; }
 .section-phone-detail .payment-menu .info { position: relative; width: 100%; left: 0; bottom: 0; -webkit-transition: all .3s ease-in; transition: all .3s ease-in; }
 
 .section-phone-detail .payment-menu .more { position: absolute; top: -22px; left: 50%; width: 75px; height: 0; max-height: 22px; padding-top: 22px; margin-left: -37.5px; overflow: hidden; background: url("../images/icons/phone-detail-fixed-arrow.png") no-repeat; background-size: cover; }
+
+.section-phone-detail .payment-menu .more.on { background: url("../images/icons/phone-detail-fixed-close.png") no-repeat; background-size: cover; }
 
 .section-phone-detail .payment-menu .wrap { padding: 30px 20px; background: #fff; border-top: 2px solid #4f5065; color: #000; overflow-x: hidden; -webkit-box-sizing: border-box; box-sizing: border-box; }
 
