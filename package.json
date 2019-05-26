@@ -24,6 +24,6 @@
   "dependencies": {
     "bxslider": "^4.2.14",
     "jquery.touchflow": "^1.6.4",
-    "jquery.touchslider": "^1.5.2"
+    "jquery.touchslider": "^1.6.0"
   }
 }

@@ -50,35 +50,44 @@ $(function(){
 
     var $more = $('.payment-menu .more');    
     var $wrap = $('.payment-menu .wrap');
-    var $he = $(window).height() / 2.2  
+    var $he = $(window).height() / 2.2
+    var $dim = $('.dim');
+    var $info = $('.payment-menu .info');
+    var $payment = $('.payment-menu');
 
     $wrap.css({ height : $he });
 
     $more.on('click',function(e){   
 
         e.preventDefault();
-
-        var $info = $('.payment-menu .info');
+        
         var $bottom = parseInt($info.css("bottom"));
-        var $dim = $('.dim');
-        var $payment = $('.payment-menu');
         var $body = $('html,body');
+        var $this = $(this);
 
         if( $bottom < 1 ){
             $info.css({ bottom : $he });
             $dim.addClass('on');
             $payment.css('z-index','202');
             $body.css('overflow','hidden');
+            $this.addClass('on');
         } else {
             $info.css({ bottom : 0 });
             $dim.removeClass('on');
             $payment.css('z-index','10');
             $body.css('overflow','visible');
+            $this.removeClass('on');
         }
-
-        
-
     });
+
+    $dim.on('click',function(){
+        $payment.css('z-index','10');
+        $info.css({ bottom : 0 });
+        $more.removeClass('on');
+    });
+
+    
+    
 
 
 

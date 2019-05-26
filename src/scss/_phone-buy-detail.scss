@@ -1,5 +1,9 @@
 .section-phone-detail{
 
+    & input{
+        -webkit-border-radius:0;
+    }
+
     .contents-main{
         padding:0 20px;
     }
@@ -520,7 +524,7 @@
         .sale-type{
 
             & dd{
-                margin-bottom:8px;
+                margin:0 8px 8px 0;
                 display:inline-block;
                 position:relative;
 
@@ -581,6 +585,9 @@
                 position: relative;
 
                 &:first-of-type{
+                    margin-right:3px;
+                }
+                &:nth-of-type(3){
                     margin-right:3px;
                 }
             }
@@ -875,11 +882,16 @@
         }
         & li{
             float:left;
-            width:calc(50% - 0.78%);
-            margin:0 5px 5px 0;
+            width:50%;
+            box-sizing:border-box;
+            margin-bottom:5px;
+
+            &:nth-child(odd){
+                padding-right:2.5px;
+            }
 
             &:nth-child(even){
-                margin-right:0;
+                padding-left:2.5px;
             }
         }
 
@@ -998,6 +1010,11 @@
             overflow:hidden;
             background:url('../images/icons/phone-detail-fixed-arrow.png')no-repeat;
             background-size:cover;
+
+            &.on{
+                background:url('../images/icons/phone-detail-fixed-close.png')no-repeat;
+                background-size:cover;
+            }
         }
 
         .wrap{

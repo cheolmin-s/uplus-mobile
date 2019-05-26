@@ -128,6 +128,10 @@
         margin-top:20px;
         position:relative;
         overflow:hidden;
+
+        & li {
+            transition:all .3s ease-out;
+        }
     }
 
     .plan-slide-wrap{

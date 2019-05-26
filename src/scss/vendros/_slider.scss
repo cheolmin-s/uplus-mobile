@@ -177,11 +177,13 @@
 .plan-slide-wrap{
     position: relative;
 }
+
 .ts-controls{
     position:absolute;
     top:0;
     left:0;
     width:100%;
+    z-index:10;
 
     .ts-paging{
         position:absolute;
@@ -235,6 +237,7 @@
         background-size:8px;
     }
 }
+
 
 .slide-heading{
     background:#45315c;
@@ -449,8 +452,14 @@
     position:relative;
     margin-top:30px;
 
+    .ts-controls{
+        top:auto;
+        bottom:0;
+    }
+
     .ts-paging{
-        top:232px;
+        top:auto;
+        bottom:18px;
 
         & button{
             background:url('../images/icons/phone-detail-slide-paging.png')no-repeat;

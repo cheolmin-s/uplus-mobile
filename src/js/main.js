@@ -6,7 +6,6 @@ $(function(){
     var $bg = $('.dim')
     var $depth1Link = $('.depth1 > li > a')
     var $depth2Link = $('.depth2 > li > a')
-    var $closeBtn = $('.close-btn')
     var $body = $('html,body');
     var $window = $(window);
 
@@ -39,7 +38,7 @@ $(function(){
         $this.toggleClass('on').siblings('.depth3').slideToggle();
     });
 
-    $closeBtn.on('click',function(){
+    $('.close-btn, .dim').on('click',function(){
         $gnbWrap.removeClass('on');
         $bg.removeClass('on');
         $body.css('overflow','visible');
@@ -53,7 +52,6 @@ $(function(){
     $(".banner-slide").touchSlider({
         controls:false,
         paging:false,
-        speed:1000,
         autoplay:{
             enable:true,
             pauseHover:false,
@@ -81,6 +79,8 @@ $(function(){
 
     $(".usim .plan-slide").touchSlider({
 
+        mode: 'fade',
+        transition: false,
         resize: false,
         counter: function(){
             
@@ -116,6 +116,8 @@ $(function(){
 
     $(".phone .plan-slide").touchSlider({
 
+        mode : 'fade',
+        transition: false,
         resize: false,
         counter: function(){
             
