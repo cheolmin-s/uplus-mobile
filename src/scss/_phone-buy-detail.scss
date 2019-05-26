@@ -348,7 +348,7 @@
                 height:calc(100% - 2px);
                 border:2px solid #000;
                 box-sizing:border-box;
-                background:0;
+                background:none;
             }
         }
 
@@ -558,7 +558,7 @@
                 position:relative;
 
                 & span{
-                    display:inline-block;
+                    display:block;
                     font-size:10px;
                     margin-top:5px;
                 }
@@ -1123,5 +1123,12 @@
         }
 
 
+    }
+}
+
+
+@media screen and( max-width:359px){
+    .section-phone-detail .condition-select .join-type dd{
+        width:32%;
     }
 }

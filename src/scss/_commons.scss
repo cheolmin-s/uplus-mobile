@@ -557,6 +557,16 @@
 
         & dd{
             position:relative;
+
+            &:after{
+                display:block;
+                content:"";
+                clear:both;
+            }
+        }
+
+        & ul{
+            float:left;
         }
 
         & li{
@@ -578,7 +588,7 @@
     }
 
     .nav-wrap{
-        margin-top:18px;
+        margin-top:19px;
         text-align:center;
 
         & li{

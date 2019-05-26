@@ -80,9 +80,6 @@ $(function(){
 $(function(){
 
     $(".usim .plan-slide").touchSlider({
-
-        mode: 'fade',
-        transition: false,
         resize: false,
         counter: function(){
             
@@ -117,9 +114,6 @@ $(function(){
     });
 
     $(".phone .plan-slide").touchSlider({
-
-        mode : 'fade',
-        transition: false,
         resize: false,
         counter: function(){
             
@@ -161,7 +155,7 @@ $(function(){
     var $tabLink1 = $('.tab-link1')
     var $tabLink2 = $('.tab-link2')
 
-    $window.on('scroll touchmove',function(){
+    $window.on('scroll',function(){
 
         var a = $window.scrollTop();
 
@@ -175,7 +169,7 @@ $(function(){
 
             var index = $this.index($tabMenu);
 
-            if( a === b ){
+            if( a >= b ){
                 $this.children('ul').children('li').eq(index).addClass('on');
                 $this.next('.tab-contents').addClass('on');
             }else{
