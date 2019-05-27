@@ -653,7 +653,8 @@ a { text-decoration: none; color: #333; }
   .customer-board li { margin: 0 6px 9px 0; }
   .quick-menu li { margin-right: 10px; }
   .quick-menu li > a { font-size: 15px; }
-  .common-footer .customer-service .tel { right: 0; } }
+  .common-footer .customer-service .tel { right: 0; }
+  .common-footer .nav-wrap a { font-size: 11px; } }
 
 .section-phone-detail input { -webkit-appearance: none; -moz-appearance: none; appearance: none; border-radius: 0px; border: 0; }
 
