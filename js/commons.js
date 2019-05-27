@@ -1,6 +1,17 @@
 // GNB 메뉴
 
 $(function(){
+    var $depth1Link = $('.depth1 > li > a')
+
+    if (location.pathname.indexOf('main.html') != -1) {
+        $depth1Link.eq(0).addClass('on');
+    } else if(location.pathname.indexOf('phone-buy-detail.html') != -1){
+        $depth1Link.removeClass('on');
+        $depth1Link.eq(2).addClass('on');
+    } 
+});
+
+$(function(){
     var $menuBtn = $('.menu-btn')
     var $gnbWrap = $('.gnb-container')
     var $bg = $('.dim')
@@ -248,22 +259,21 @@ $(function(){
 $(function(){
 
     var $quickMenu = $('.quick-menu .sub-link');
+    var $dim = $('.section-dim');
+    var $subDepth2 = $('.sub-depth2');
+    var $body = $('html,body');
 
     $quickMenu.on('click',function(e){
 
         e.preventDefault();
-        
-        var $body = $('html,body');
-        var $dim = $('.section-dim');
-        var $subDepth2 = $('.sub-depth2');
-
+    
         if($(this).hasClass('on')){
             $(this).removeClass('on');
             $body.removeClass('scroll-off').off('scroll touchmove');
             $dim.removeClass('on');
             $subDepth2.removeClass('on');
         } else {
-            $(this).addClass('on');            
+            $(this).addClass('on');
             $body.addClass('scroll-off').on('scroll touchmove',function(e){
                 e.preventDefault();
             });
@@ -271,6 +281,13 @@ $(function(){
             $subDepth2.addClass('on');
         }
         
+    });
+
+    $dim.on('click',function(){
+        $body.removeClass('scroll-off').off('scroll touchmove');
+        $dim.removeClass('on');
+        $subDepth2.removeClass('on');
+        $quickMenu.removeClass('on');
     });
 
 });
