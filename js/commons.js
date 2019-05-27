@@ -259,14 +259,14 @@ $(function(){
 
         if($(this).hasClass('on')){
             $(this).removeClass('on');
-            $body.addClass('scroll-off').on('scroll touchmove',function(e){
-                e.preventDefault();
-            });
+            $body.removeClass('scroll-off').off('scroll touchmove');
             $dim.removeClass('on');
             $subDepth2.removeClass('on');
         } else {
-            $(this).addClass('on');
-            $body.removeClass('scroll-off').off('scroll touchmove');
+            $(this).addClass('on');            
+            $body.addClass('scroll-off').on('scroll touchmove',function(e){
+                e.preventDefault();
+            });
             $dim.addClass('on');
             $subDepth2.addClass('on');
         }
