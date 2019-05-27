@@ -168,24 +168,27 @@ $(function(){
 
     $window.on('scroll',function(){
 
-        var a = $window.scrollTop();
+        var a = $window.scrollTop() + $window.height() / 2;
 
         var $tabMenu = $('.tab-menu');
+        var $tabContainer = $('.tab-container')
 
-        $tabMenu.each(function(){
+        $tabContainer.each(function(){
 
             var $this = $(this);
 
-            var b = $this.offset().top - 60;
+            var b = $this.offset().top
 
-            var index = $this.index($tabMenu);
+            var index = $this.index($tabContainer);
 
             if( a >= b ){
-                $this.children('ul').children('li').eq(index).addClass('on');
-                $this.next('.tab-contents').addClass('on');
+                $tabMenu.children('ul').children('li').removeClass('on');
+                $this.children($tabMenu).children('ul').children('li').eq(index).addClass('on');
+                $('.tab-contents').removeClass('on');
+                $this.children('.tab-contents').addClass('on');
             }else{
-                $this.children('ul').children('li').eq(index).removeClass('on');
-                $this.next('.tab-contents').removeClass('on');
+                $this.children($tabMenu).children('ul').children('li').eq(index).removeClass('on');
+                $this.children('.tab-contents').removeClass('on');
             }
         });
     })

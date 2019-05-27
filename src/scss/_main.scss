@@ -855,7 +855,14 @@
         }
     }
 
-    .common-footer .customer-service .tel{
-        right:0;
+    .common-footer{ 
+        
+        .customer-service .tel{
+            right:0;
+        }
+
+        .nav-wrap a{
+            font-size:11px;
+        }
     }
 }
