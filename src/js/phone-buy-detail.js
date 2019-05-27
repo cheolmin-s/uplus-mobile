@@ -1,29 +1,35 @@
 $(function(){
 
     var $quickMenu = $('.quick-menu .sub-link');
+    var $dim = $('.section-dim');
+    var $subDepth2 = $('.sub-depth2');
+    var $body = $('html,body');
 
     $quickMenu.on('click',function(e){
 
         e.preventDefault();
-        
-        var $body = $('html,body');
-        var $dim = $('.section-dim');
-        var $subDepth2 = $('.sub-depth2');
-
+    
         if($(this).hasClass('on')){
             $(this).removeClass('on');
-            $body.addClass('scroll-off').on('scroll touchmove',function(e){
-                e.preventDefault();
-            });
+            $body.removeClass('scroll-off').off('scroll touchmove');
             $dim.removeClass('on');
             $subDepth2.removeClass('on');
         } else {
             $(this).addClass('on');
-            $body.removeClass('scroll-off').off('scroll touchmove');
+            $body.addClass('scroll-off').on('scroll touchmove',function(e){
+                e.preventDefault();
+            });
             $dim.addClass('on');
             $subDepth2.addClass('on');
         }
         
+    });
+
+    $dim.on('click',function(){
+        $body.removeClass('scroll-off').off('scroll touchmove');
+        $dim.removeClass('on');
+        $subDepth2.removeClass('on');
+        $quickMenu.removeClass('on');
     });
 
 });

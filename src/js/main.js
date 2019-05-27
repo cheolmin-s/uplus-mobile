@@ -1,6 +1,17 @@
 // GNB 메뉴
 
 $(function(){
+    var $depth1Link = $('.depth1 > li > a')
+
+    if (location.pathname.indexOf('main.html') != -1) {
+        $depth1Link.eq(0).addClass('on');
+    } else if(location.pathname.indexOf('phone-buy-detail.html') != -1){
+        $depth1Link.removeClass('on');
+        $depth1Link.eq(2).addClass('on');
+    } 
+});
+
+$(function(){
     var $menuBtn = $('.menu-btn')
     var $gnbWrap = $('.gnb-container')
     var $bg = $('.dim')
